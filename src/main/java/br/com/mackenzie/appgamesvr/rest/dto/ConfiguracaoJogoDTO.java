@@ -1,15 +1,9 @@
 package br.com.mackenzie.appgamesvr.rest.dto;
 
+import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import org.hibernate.annotations.GenericGenerator;
+import br.com.mackenzie.appgamesvr.domain.ConfiguracaoJogo;
 
 @JsonInclude(Include.NON_NULL)
 public class ConfiguracaoJogoDTO implements Serializable {
@@ -21,6 +15,12 @@ public class ConfiguracaoJogoDTO implements Serializable {
   private int isModoImersivo;
 
   private String observacao;
+
+  public ConfiguracaoJogoDTO(ConfiguracaoJogo input) {
+    this.idConfiguracaoJogo = input.getIdConfiguracaoJogo();
+    this.isModoImersivo = input.getIsModoImersivo();
+    this.observacao = input.getObservacao();
+  }
 
   public int getIdConfiguracaoJogo() {
     return idConfiguracaoJogo;

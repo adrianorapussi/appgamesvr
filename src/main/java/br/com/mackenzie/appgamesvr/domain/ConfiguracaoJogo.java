@@ -42,4 +42,13 @@ public class ConfiguracaoJogo implements Serializable {
   public void setIsModoImersivo(int isModoImersivo) {
     this.isModoImersivo = isModoImersivo;
   }
+
+  public String getObservacao() {
+    return observacao;
+  }
+
+  public void setObservacao(String observacao) {
+    this.observacao = observacao;
+  }
+
 }
